@@ -8,14 +8,10 @@
     <string name="checkbox">CheckBox</string>
     <string name="time_pick">Time Pick</string>
     <string name="date_pick">Date Pick</string>
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+    <string-array name="example_array">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
     </string-array>
 </resources>
