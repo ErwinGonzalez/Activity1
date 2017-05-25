@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 
 import java.util.Calendar;
@@ -25,6 +26,7 @@ import butterknife.OnTextChanged;
 
 import static com.galileo.sp1.uiapp.R.id.TPtv;
 import static com.galileo.sp1.uiapp.R.id.checkBox;
+import static com.galileo.sp1.uiapp.R.id.spinner;
 import static junit.runner.Version.id;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,10 +50,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.planets_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+                R.array.example_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         spinner.setAdapter(adapter);
     }
     /**
@@ -62,15 +62,13 @@ public class MainActivity extends AppCompatActivity {
     public void OnCheckedChanged(boolean isChecked) {
         if(isChecked){
             // code to execute when the button is clicked to ON
-            ToggleTV.setText("The Button is ON");
         }else {
             // code to execute when the button is clicked to OFF
-            ToggleTV.setText("The Button is OFF");
         }
     }
     @OnItemSelected(R.id.spinner)
     public void OnItemSelected(int position){
-        SpinnerTV.setText("Item selected "+spinner.getItemAtPosition(position));
+        SpinnerTV.setText("Item Selected is "+spinner.getItemAtPosition(position));
     }
     @OnClick({R.id.button,R.id.button2,R.id.checkBox})
     public void OnClick(View view){
@@ -89,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkCheckBox() {
         if(checkBox.isChecked())
-            CheckBoxTV.setText("CheckBox is Checked");
+            Toast.makeText(MainActivity.this,"CheckBox is Checked",Toast.LENGTH_SHORT).show();
         else
-            CheckBoxTV.setText("CheckBox is Unchecked");
+            Toast.makeText(MainActivity.this,"CheckBox is not Checked",Toast.LENGTH_SHORT).show();
     }
 
     private void showDatePicker() {
@@ -103,17 +101,7 @@ public class MainActivity extends AppCompatActivity {
         mDatePicker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                String d,m,y;
-                if(day<9)
-                    d="0"+day;
-                else
-                    d=""+day;
-                if(month<9)
-                    m="0"+month;
-                else
-                    m=""+month;
-                y=""+year;
-                DatePickerTV.setText(d+"/"+m+"/"+y);
+                Toast.makeText(MainActivity.this,"Date picked is "+day+"/"+month+"/"+year,Toast.LENGTH_SHORT).show();
             }
         },year,month,day);
         mDatePicker.setTitle("Pick Date");
@@ -128,15 +116,7 @@ public class MainActivity extends AppCompatActivity {
         mTimePicker = new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                String h = selectedHour + "";
-                String m = selectedMinute + "";
-                if (h.length() == 1) {
-                    h = "0" + h;
-                }
-                if (m.length() == 1) {
-                    m = "0" + m;
-                }
-                TimePickerTV.setText(h + ":" + m);
+                Toast.makeText(MainActivity.this,"Time Picked is "+selectedHour+":"+selectedMinute,Toast.LENGTH_SHORT).show();
             }
         }, hour, minute, true);//Yes 24 hour atime
         mTimePicker.setTitle("Select Time");
