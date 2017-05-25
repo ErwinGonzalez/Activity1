@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">UIApp</string>
     <string name="toggle_tv_text">Toggle button not clicked</string>
-    <string name="spinner_not_selected">Spinner_tv_text</string>
-    <string name="checkbox_not_selected">checkbox_tv_text</string>
+    <string name="spinner_not_selected">Spinner item not selected</string>
+    <string name="checkbox_not_selected">Checkbox not checked</string>
     <string name="time_tv_text">No time picked</string>
     <string name="date_tv_text">No date picked</string>
     <string name="checkbox">CheckBox</string>
