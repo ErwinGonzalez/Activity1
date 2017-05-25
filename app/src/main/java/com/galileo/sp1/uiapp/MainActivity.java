@@ -17,17 +17,12 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 import butterknife.OnItemSelected;
-import butterknife.OnTextChanged;
 
 import static com.galileo.sp1.uiapp.R.id.TPtv;
-import static com.galileo.sp1.uiapp.R.id.checkBox;
-import static com.galileo.sp1.uiapp.R.id.spinner;
-import static junit.runner.Version.id;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.TBtv)
@@ -70,13 +65,13 @@ public class MainActivity extends AppCompatActivity {
     public void OnItemSelected(int position){
         SpinnerTV.setText("Item Selected is "+spinner.getItemAtPosition(position));
     }
-    @OnClick({R.id.button,R.id.button2,R.id.checkBox})
+    @OnClick({R.id.time_picker_button,R.id.date_picker_button,R.id.checkBox})
     public void OnClick(View view){
         switch (view.getId()){
-            case R.id.button:
+            case R.id.time_picker_button:
                 showTimePicker();
                 break;
-            case R.id.button2:
+            case R.id.date_picker_button:
                 showDatePicker();
                 break;
             case R.id.checkBox:

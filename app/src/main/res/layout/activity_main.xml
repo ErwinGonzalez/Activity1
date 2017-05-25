@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="@string/date_tv_text"
         android:id="@+id/DPtv"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/time_picker_button"
         android:layout_alignLeft="@+id/TPtv"
         android:layout_alignStart="@+id/TPtv"
         android:layout_marginTop="28dp" />
@@ -82,11 +82,11 @@
         android:layout_alignBaseline="@+id/CBtv"
         android:layout_below="@+id/spinner"
         android:layout_alignBottom="@+id/CBtv"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
+        android:layout_alignLeft="@+id/time_picker_button"
+        android:layout_alignStart="@+id/time_picker_button" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/time_picker_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/time_pick"
@@ -96,13 +96,13 @@
         android:layout_alignStart="@+id/toggleButton" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/date_picker_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/date_pick"
         android:layout_alignBaseline="@+id/DPtv"
         android:layout_alignBottom="@+id/DPtv"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
+        android:layout_alignLeft="@+id/time_picker_button"
+        android:layout_alignStart="@+id/time_picker_button" />
 
 </RelativeLayout>
