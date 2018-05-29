@@ -8,6 +8,13 @@
     <string name="checkbox">CheckBox</string>
     <string name="time_pick">Time Pick</string>
     <string name="date_pick">Date Pick</string>
+    <string name="the_button_is_on">The Button is ON</string>
+    <string name="the_button_is_off">The Button is OFF</string>
+    <string name="item_selected">Item Selected: %s</string>
+    <string name="checkbox_checked">CheckBox is Checked</string>
+    <string name="checkbox_unchecked">CheckBox is Unchecked</string>
+    <string name="selected_day">%s / %s / %s</string>
+    <string name="selected_time">%s : %s</string>
     <string-array name="example_array">
         <item>Item 1</item>
         <item>Item 2</item>

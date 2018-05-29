@@ -2,8 +2,8 @@ package com.galileo.sp1.uiapp;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
@@ -12,20 +12,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-
 import java.util.Calendar;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 import butterknife.OnItemSelected;
-import butterknife.OnTextChanged;
 
 import static com.galileo.sp1.uiapp.R.id.TPtv;
-import static com.galileo.sp1.uiapp.R.id.checkBox;
-import static junit.runner.Version.id;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.TBtv)
@@ -60,15 +55,15 @@ public class MainActivity extends AppCompatActivity {
     public void OnCheckedChanged(boolean isChecked) {
         if(isChecked){
             // code to execute when the button is clicked to ON
-            ToggleTV.setText("The Button is ON");
+            ToggleTV.setText(R.string.the_button_is_on);
         }else {
             // code to execute when the button is clicked to OFF
-            ToggleTV.setText("The Button is OFF");
+            ToggleTV.setText(R.string.the_button_is_off);
         }
     }
     @OnItemSelected(R.id.spinner)
     public void OnItemSelected(int position){
-        SpinnerTV.setText("Item selected "+spinner.getItemAtPosition(position));
+        SpinnerTV.setText(getString(R.string.item_selected,spinner.getItemAtPosition(position)));
     }
     @OnClick({R.id.button,R.id.button2,R.id.checkBox})
     public void OnClick(View view){
@@ -87,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkCheckBox() {
         if(checkBox.isChecked())
-            CheckBoxTV.setText("CheckBox is Checked");
+            CheckBoxTV.setText(R.string.checkbox_checked);
         else
-            CheckBoxTV.setText("CheckBox is Unchecked");
+            CheckBoxTV.setText(R.string.checkbox_unchecked);
     }
 
     private void showDatePicker() {
@@ -111,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                     m=""+month;
                 y=""+year;
-                DatePickerTV.setText(d+"/"+m+"/"+y);
+                DatePickerTV.setText(getString(R.string.selected_day,d,m,y));
             }
         },year,month,day);
         mDatePicker.setTitle("Select Date");
@@ -134,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 if (m.length() == 1) {
                     m = "0" + m;
                 }
-                TimePickerTV.setText(h + ":" + m);
+                TimePickerTV.setText(getString(R.string.selected_time,h,m));
             }
         }, hour, minute, true);//Yes 24 hour atime
         mTimePicker.setTitle("Select Time");
